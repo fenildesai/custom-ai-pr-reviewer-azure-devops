@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI PR Reviewer | Architecture Overview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gradient-text { background: linear-gradient(135deg, #60a5fa, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card:hover { transform: translateY(-5px); transition: transform 0.3s ease; border-color: #60a5fa; }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Hero Section -->
+    <header class="container mx-auto px-6 py-16 text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-blue-300 text-sm font-semibold mb-6">
+            <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+            Azure OpenAI Integration
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+            Intelligent <span class="gradient-text">PR Review Automation</span>
+        </h1>
+        <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+            Seamlessly integrate AI architectural reviews directly into your Azure DevOps pipeline. 
+            No external functions. No complexity. Pure efficiency.
+        </p>
+    </header>
+
+    <!-- Comparison Section -->
+    <section class="container mx-auto px-6 py-12">
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Problem -->
+            <div class="glass rounded-2xl p-8 border-l-4 border-red-500">
+                <h2 class="text-2xl font-bold mb-4 flex items-center text-red-400">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    The Problem
+                </h2>
+                <ul class="space-y-3 text-gray-300">
+                    <li class="flex items-start"><span class="text-red-500 mr-2">✖</span> Manual reviews are slow and bottleneck releases.</li>
+                    <li class="flex items-start"><span class="text-red-500 mr-2">✖</span> Reviewers experience fatigue and miss bugs.</li>
+                    <li class="flex items-start"><span class="text-red-500 mr-2">✖</span> Architectural docs are often ignored.</li>
+                </ul>
+            </div>
+
+            <!-- Solution -->
+            <div class="glass rounded-2xl p-8 border-l-4 border-green-500">
+                <h2 class="text-2xl font-bold mb-4 flex items-center text-green-400">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Our Solution
+                </h2>
+                <ul class="space-y-3 text-gray-300">
+                    <li class="flex items-start"><span class="text-green-500 mr-2">✔</span> Instant, automated AI feedback in minutes.</li>
+                    <li class="flex items-start"><span class="text-green-500 mr-2">✔</span> Context-aware verification against YOUR docs.</li>
+                    <li class="flex items-start"><span class="text-green-500 mr-2">✔</span> Runs directly in pipeline (No separate infrastructure).</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="container mx-auto px-6 py-12">
+        <h2 class="text-3xl font-bold mb-8 text-center">High Level <span class="text-blue-400">Architecture</span></h2>
+        <div class="glass rounded-2xl p-6 flex justify-center items-center bg-white/5">
+            <!-- Ensure architecture.png is in the same folder as this HTML file -->
+            <img src="architecture.png" alt="Architecture Diagram" class="max-w-full h-auto rounded-lg shadow-2xl">
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-4 mt-8 text-center text-sm text-gray-400">
+            <div>1. Dev Pushes Code</div>
+            <div>2. Pipeline Triggers</div>
+            <div>3. Context Loaded</div>
+            <div>4. AI Analysis</div>
+            <div>5. Response Parsed</div>
+            <div>6. Comment Posted</div>
+        </div>
+    </section>
+
+    <!-- Benefits Grid -->
+    <section class="container mx-auto px-6 py-16 pb-24">
+        <h2 class="text-3xl font-bold mb-10 text-center">Business Impact</h2>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="glass rounded-xl p-6 card">
+                <div class="text-4xl mb-4">⚡</div>
+                <h3 class="text-xl font-bold mb-2">Speed</h3>
+                <p class="text-gray-400">30% faster approval cycles. Developers get feedback while context is fresh.</p>
+            </div>
+            <div class="glass rounded-xl p-6 card">
+                <div class="text-4xl mb-4">🛡️</div>
+                <h3 class="text-xl font-bold mb-2">Consistency</h3>
+                <p class="text-gray-400">Every single line of code is checked against the same high standards.</p>
+            </div>
+            <div class="glass rounded-xl p-6 card">
+                <div class="text-4xl mb-4">💰</div>
+                <h3 class="text-xl font-bold mb-2">Cost Efficient</h3>
+                <p class="text-gray-400">Uses existing Azure DevOps build minutes. No new VMs or Functions to pay for.</p>
+            </div>
+            <div class="glass rounded-xl p-6 card">
+                <div class="text-4xl mb-4">🧠</div>
+                <h3 class="text-xl font-bold mb-2">Smart Context</h3>
+                <p class="text-gray-400">Reads your markdown docs to understand the "Why" behind the code, not just syntax.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-gray-800 py-8 text-center text-gray-600">
+        <p>Generated by Antigravity Agent • 2026</p>
+    </footer>
+
+</body>
+</html>

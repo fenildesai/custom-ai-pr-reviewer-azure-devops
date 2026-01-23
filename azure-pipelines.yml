@@ -1,0 +1,26 @@
+trigger:
+- main
+
+pr:
+- main
+- develop
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- checkout: self
+  persistCredentials: true # Required for git fetch in the script
+
+- task: PowerShell@2
+  displayName: 'AI Code Reviewer'
+  env:
+    # Map secret variables here. 
+    # You must define AZURE_OPENAI_KEY and AZURE_OPENAI_ENDPOINT in your Pipeline Library or Variables
+    AZURE_OPENAI_KEY: $(AzureOpenAIKey)
+    AZURE_OPENAI_ENDPOINT: $(AzureOpenAIEndpoint)
+    SYSTEM_ACCESSTOKEN: $(System.AccessToken) # Built-in ADO token
+  inputs:
+    filePath: 'pr_reviewer.ps1'
+    arguments: '-ContextFilePath "project_context.md"'
+    pwsh: true
